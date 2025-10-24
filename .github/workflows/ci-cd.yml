@@ -75,7 +75,7 @@ jobs:
       run: bundle exec brakeman --no-progress --format json --output brakeman-report.json
 
     - name: Upload Brakeman results
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       if: always()
       with:
         name: brakeman-report
@@ -127,7 +127,7 @@ jobs:
         docker tag grocenow:${{ github.sha }} grocenow:latest
 
     - name: Upload Docker image
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: docker-image
         path: |
